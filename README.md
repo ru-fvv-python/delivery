@@ -2,6 +2,7 @@
 
 ## Клонирование проекта
     git clone git@github.com:ru-fvv-python/delivery.git
+    cd delivery
 
 ## Диплой проекта
     ./deploy
