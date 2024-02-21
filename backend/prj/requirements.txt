@@ -7,10 +7,12 @@ django-filter==23.5
 djangochannelsrestframework==1.2.0
 djangorestframework==3.14.0
 drf-yasg==1.21.7
+et-xmlfile==1.1.0
 exceptiongroup==1.2.0
 inflection==0.5.1
 iniconfig==2.0.0
 msgpack==1.0.7
+openpyxl==3.1.2
 packaging==23.2
 pillow==10.2.0
 pluggy==1.4.0
