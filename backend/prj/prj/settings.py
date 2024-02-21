@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # активация приложения
     'market.apps.MarketConfig',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
