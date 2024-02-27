@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Index page</title>
+  <script
+          src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+</head>
+<body>
+<h1>Привет, {{name}}.</h1>
+</body>
+<button id="connect_button">Connect with socket</button>
+<input type="text" id="message_text">
+<button id="send_message_button">Send message to server by web-socket</button>
+
+<script>
+    var ws;
+    $("#connect_button").click(function () {
+        ws = new WebSocket('ws://localhost:8000/market');
+        ws.onmessage = function (event){
+            console.log(event.data);
+        }
+    });
+    $("#send_message_button").click(function () {
+        const message = $("#message_text").val();
+        ws.send(JSON.stringify({'message': message}));
+    });
+</script>
+</html>

@@ -1,4 +1,3 @@
-
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -10,6 +9,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
+
+    "daphne",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -19,6 +20,7 @@ INSTALLED_APPS = [
     # активация приложения
     'market.apps.MarketConfig',
     'drf_yasg',
+    "channels",
 ]
 
 MIDDLEWARE = [
@@ -36,7 +38,7 @@ ROOT_URLCONF = 'prj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,7 +75,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 LANGUAGE_CODE = 'ru-ru'
 
 TIME_ZONE = 'Europe/Moscow'
@@ -89,3 +90,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DATA_DIR = BASE_DIR / '../init_data'
+
+ASGI_APPLICATION = "market.ws_route_app.application"
